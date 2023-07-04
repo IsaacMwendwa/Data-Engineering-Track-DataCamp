@@ -28,3 +28,18 @@ ORDER BY most_language_diversity DESC;`
 * To filter by Agg Funcs when grouping, you must use HAVING, not WHERE
 * WHERE filters individual records, HAVING filters grouped records
 * Order of Group BY Clauses: W G H O
+
+#### JOINS
+Write SELECT statement last after FROM and JOIN, to use table aliases defined in FROM/JOIN blocks
+* `SELECT c.name AS country, l.name AS language, official
+FROM countries AS c
+INNER JOIN languages AS l
+USING (code);`
+
+Chaining Joins
+* `SELECT name, e.year, fertility_rate, e.unemployment_rate
+FROM countries AS c
+INNER JOIN populations as p
+ON c.code=p.country_code
+INNER JOIN economies AS e
+USING(code)`
