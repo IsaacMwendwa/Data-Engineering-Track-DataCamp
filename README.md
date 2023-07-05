@@ -49,7 +49,7 @@ Your task is to determine the top 10 capital cities in Europe and the Americas b
 city_proper_pop / metroarea_pop * 100
 
 Do not use table aliasing in this exercise.
--- Select fields from cities
+`--Select fields from cities
 SELECT name, country_code, city_proper_pop, metroarea_pop,
 (city_proper_pop / metroarea_pop * 100) AS city_perc 
 FROM cities
@@ -62,4 +62,4 @@ WHERE continent ='Europe' OR continent LIKE '%America')
 -- Add filter condition such that metroarea_pop does not have null values
 AND metroarea_pop IS NOT NULL
 -- Sort and limit the result
-ORDER BY city_perc DESC LIMIT 10;
+ORDER BY city_perc DESC LIMIT 10;`
