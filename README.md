@@ -63,3 +63,15 @@ WHERE continent ='Europe' OR continent LIKE '%America')
 AND metroarea_pop IS NOT NULL
 -- Sort and limit the result
 ORDER BY city_perc DESC LIMIT 10;`
+
+
+1. We then automate data loading to the database by batch processing using [Linux's Crontab](https://www.geeksforgeeks.org/crontab-in-linux-with-examples/)
+   * We need to process files for previous day, by adding a Crontab
+   * The full command of the Crontab for execution on a daily cadence at 4:30 A.M UTC is as below:
+
+     `30 4 * * * /home/imwendwa/.pyenv/versions/twitterScraping/bin/python`          
+     `/home/imwendwa/analytics/policeAndElectionsTwitterScraping/police_and_elections_etl_prod.py   >>`
+     <br>``/home/imwendwa/analytics/policeAndElectionsTwitterScraping/etl_logs/`date +\%Y-\%m-\%d_\%H:\%M:\%S`-police-and-elections-etl-logs.log 2>&1``
+   * The first line of the command references running the script using the Python interpreter (.../bin/python) at 4:30 AM UTC
+   * The second line is the path of the ETL script, and we pipe the output using the ">>" symbol
+   * The third/fourth line of the Crontab is the path of the ETL logs, we get after running the ETL script. The filename is derived from a timestamp as the prefix
