@@ -64,3 +64,18 @@ AND metroarea_pop IS NOT NULL
 -- Sort and limit the result
 ORDER BY city_perc DESC LIMIT 10;`
 
+#### Insert Distinct Records into New Tables
+`INSERT INTO target_table 
+SELECT DISTINCT col1, col2
+FROM source_table;`
+
+#### Normal Insert
+`INSERT INTO table (col1, col2)
+VALUES ("val_a", "val_b");`
+
+#### Rename Column
+`ALTER TABLE table RENAME COLUMN old_name TO new_name;`
+
+
+
+
