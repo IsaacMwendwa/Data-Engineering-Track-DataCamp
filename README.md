@@ -76,6 +76,18 @@ VALUES ("val_a", "val_b");`
 #### Rename Column
 `ALTER TABLE table RENAME COLUMN old_name TO new_name;`
 
+#### Integrity Constraints
+* Attribute constraints e.g data types on cols
+* Key constraints e.g primary keys
+* Referential Integrity cons -> enforced through foreign keys
 
+  1. Attribute COnstraints
+* Type Cast cols in query: `SELECT CAST(col AS integer) FROM table;'
+* Type cast col in table: `ALTER TABLE table_name ALTER COLUMN column_name TYPE varchar(10) `
+* Convert types without reserving too much space: `ALTER TABLE table_name ALTER COLUMN column_name TYPE varchar(x) USING SUBSTRING(column_name FROM 1 FOR x)`
+ 
+  2. 
+
+  3.
 
 
