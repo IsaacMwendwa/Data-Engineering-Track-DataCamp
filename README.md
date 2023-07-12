@@ -10,8 +10,6 @@ FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> AS (Alias) -> ORDER BY -> LIMIT
 * Round(var, no. of dp) : positive --> decimals, negative --> count from left (whole part)
 * Agg Functions for Numbers --> COUNT, SUM, AVG, MAX, MIN ::: For Strings --> MAX, MIN, COUNT
 
-
-
 #### Group By
 Find the release_year and film_count of each year
 * `SELECT release_year, COUNT(*) AS film_count
@@ -77,17 +75,24 @@ VALUES ("val_a", "val_b");`
 `ALTER TABLE table RENAME COLUMN old_name TO new_name;`
 
 #### Integrity Constraints
-* Attribute constraints e.g data types on cols
+* Attribute constraints e.g data types on cols, not null, unique
 * Key constraints e.g primary keys
 * Referential Integrity cons -> enforced through foreign keys
 
-  1. Attribute COnstraints
+  1. Attribute Constraints
 * Type Cast cols in query: `SELECT CAST(col AS integer) FROM table;'
 * Type cast col in table: `ALTER TABLE table_name ALTER COLUMN column_name TYPE varchar(10) `
 * Convert types without reserving too much space: `ALTER TABLE table_name ALTER COLUMN column_name TYPE varchar(x) USING SUBSTRING(column_name FROM 1 FOR x)`
  
-  2. 
+  2. Key Constraints
+* Identifying columns for keys:
+  * Count all possible combinations: `SELECT COUNT(DISTINCT(column_a, column_b, ...)) FROM table;`
+      * If result == no. of rows --> super key
+      * Remove cols sequentially, and pick the combination that doesn't reduce the result --> candidate key
 
-  3.
+  3. Referential Integrity
+  * Identfying correct constraint name: `SELECT constraint_name, table_name, constraint_type
+FROM information_schema.table_constraints
+WHERE constraint_type = 'FOREIGN KEY';`
 
 
