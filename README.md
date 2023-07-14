@@ -102,3 +102,7 @@ WHERE constraint_type = 'FOREIGN KEY';`
 * Access control - should all users oif dB have same level of access
 * DBMS - how do I pick between SQL and NoSQL options
 
+### Approaches to Processing Data
+1. OLTP vs OLAP
+
+
