@@ -95,4 +95,10 @@ VALUES ("val_a", "val_b");`
 FROM information_schema.table_constraints
 WHERE constraint_type = 'FOREIGN KEY';`
 
+## Database Design
+* Schemas - how should data be logically organized
+* Normalization - should my data have minimal dependency and redundancy
+* Views - wht joins will be done most often
+* Access control - should all users oif dB have same level of access
+* DBMS - how do I pick between SQL and NoSQL options
 
