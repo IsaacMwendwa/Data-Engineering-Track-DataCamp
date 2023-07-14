@@ -69,4 +69,42 @@ Is the first step of dB design, which has three levels:
         * Create new table for dim_author_sf with column for author: `CREATE TABLE dim_author_sf (author varchar(256)  NOT NULL);`
         * Insert all distinct authors from dim_book_star into dim_author_sf: `INSERT INTO dim_author_sf SELECT DISTINCT author FROM dim_book_star;`
         * Add primary key to dim_athor_sf: `ALTER TABLE dim_author_sf ADD COLUMN author_id SERIAL PRIMARY KEY;`
-        * View new table: `SELECT * FROM dim_author`
+        * View new table: `SELECT * FROM dim_author_sf;`
+
+### Evaluation of Database Normalization
+* Advantages
+  * Normalization eliminates data redundancy, saving on storage
+  * Better data integrity- accurate and consistent data due to easier updates
+
+* Disadvantages
+    * Complex queries due to more joins, which require more CPU
+* N/B: OLTP (eg. operational dBs) are write-intensive, meaning that we prioritize quicker & safer insertion of data, hence we choose Normalization
+* OLAP (eg. Data Warehouses) are read-intensive, meaning we prioritize quicker queries for analytics, hence we choose Denormalization
+
+### Normal Forms
+-> Are extents to which you can normalize
+1. 1NF
+* Each record must be unique, and each cell (column) must hold one value
+  
+2. 2NF
+* Must satisfy 1NF, and:
+    *  If primary key is 1 col --> automatically 2NF
+    *  if there is a composite primary key --> then each non-key col must be dependent on all keys  
+ 
+3. 3NF
+* Must satisfy 2NF, and no transitive dependencies i.e non-key cols can't depend on other non-key cols
+
+### Data Anomalies
+* A database that isn't normalized enough is prone to three types of anomaly errors: update, insertion, and deletion
+* To avoid these errors, it's best to normalize to 3NF
+
+1. Update Anomaly
+    * Is a data inconsistency that can arise when updating a database with redundancy.
+    * Need to update more than one record, else there will be inconsistency. User updating needs to know about the redundancy
+  
+2. Insertion Anomaly
+    * Is when you are unable to add a new record due to missing attributes.
+    * Occurs due to dependencies between columns in the same table unintentionally restricting what can be inserted into the table
+
+4. Deletion Anomaly
+    * Happens when you delete a record and unintentionally delete other data
