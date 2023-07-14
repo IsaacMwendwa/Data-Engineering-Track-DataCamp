@@ -45,3 +45,28 @@ Is the first step of dB design, which has three levels:
 1. Conceptual Data Model -> describes what dB contains, e.g entities, relationships, attributes. Tools used: data structure diagrams e.g E-R & UML diagrams
 2. Logical Data Model -> decides how these entities and relationships map to tables. Tools used: dB models and schemas e.g relational model and star schema
 3. Physical Data Model -> looks at how data will be physically stored at the lowest level of abstraction. Tools used: partitions, CPUs, indexes, backup systems, tablespaces
+
+### Beyond Relational Model
+1. Star Schema
+* Dimensional modeling is an adaptation of the relational model specifically for data warehouses.
+* It's optimized for OLAP type of queries that aim to analyze rather than update. To do this, it uses the Star Schema
+* The schema of a dimensional model tends to be easy to interpret and extend. This is a big plus for analysts working on the warehouse.
+* Dimensional models are made up of two table types:
+    * Fact Tables: holds records of a key metric, which changes often. Connections to dimensions via foreign keys
+    * Dimension Tables: holds descriptions of specific attributes, which don't change as often
+
+2. Snowflake Schema
+* Is an extension of the star schema, hence it has more tables
+* The fact table is the same, but the way the dimension tables are structured is different.
+* The star schema extends one dimension, while the snowflake schema extends over more than one dimension
+* This is because the dimension tables are normalized
+* Normalization is a DB design technique that divides tables into smaller tables and connects them via relationships, hence reducing redunancy and increasing data integrity
+* Normalization is achieved by identifying repeating groups of data and creating new tables for them
+<br>Process:
+    * ![Normalizing Star Schema To Snowflake](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Normalizing-Star-Schema-To-Snowflake.PNG "Normalizing Star Schema To Snowflake")
+    * Adding foreign keys to fact table: `ALTER TABLE fact_booksales ADD CONSTRAINT sales_book FOREIGN KEY (book_id) REFERENCES dim_book_star (book_id);`
+    * Extend book dimension from star to snowflake schema:
+        * Create new table for dim_author_sf with column for author: `CREATE TABLE dim_author_sf (author varchar(256)  NOT NULL);`
+        * Insert all distinct authors from dim_book_star into dim_author_sf: `INSERT INTO dim_author_sf SELECT DISTINCT author FROM dim_book_star;`
+        * Add primary key to dim_athor_sf: `ALTER TABLE dim_author_sf ADD COLUMN author_id SERIAL PRIMARY KEY;`
+        * View new table: `SELECT * FROM dim_author`
