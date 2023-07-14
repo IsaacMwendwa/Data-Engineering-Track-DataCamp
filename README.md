@@ -104,5 +104,7 @@ WHERE constraint_type = 'FOREIGN KEY';`
 
 ### Approaches to Processing Data
 1. OLTP vs OLAP
-
+* OLTP data is stored in an Operational Database, which is pulled and cleaned to create an OLAP Data Warehouse
+  
+![OLTP vs OLAP](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/OLTP-vs-OLAP.PNG "OLTP vs OLAP")
 
