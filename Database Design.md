@@ -144,7 +144,20 @@ Is the first step of dB design, which has three levels:
 * Partitioning fits into the physical data model, as we distribute the data over several physical entities
 * Two types of partitioning:
     * Vertical Partitioning - splits up a table vertically by its columns, even when it's already fully normalized
-    * Horizontal Partitioning - splits up tables over the rows, e.g by splitting data using timestamp
-* Example query of H. partitioning in PostgreSQL:
+    * Horizontal Partitioning - splits up tables over the rows, e.g by splitting data using timestamp. Can be partitioned by range, list etc
+* Example query of H. partitioning in PostgreSQL by RANGE:
      ![Horizontal Partitioning](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Horizontal-Partitioning.PNG "Horizontal Partitioning")
-  
+
+Advantages of H. Partitioning
+* Can help by optimizing indices, increasing the chance that heavily-used parts of the index fit in memory
+* You can move rarely accessed partitions to a slower medium, and vice versa
+* Can benefit both OLAP and OLTP
+
+Disadvantages of H. Partitioning
+* Partitioning existing tables can be a hassle: you have to create a new table and copy over the data
+* We can not always set the same type of constraints on a partitioned table, for example, the PRIMARY KEY constraint
+
+#### Sharding
+* We can take partitioning one step further and distribute the partitions over several machines
+* When horizontal partitioning is applied to spread a table over several machines, it's called sharding
+* This brings the concept of massively parallel processing (MPP) databases, where each node, or machine, can do calculations on specific shards
