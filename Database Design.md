@@ -166,3 +166,29 @@ Disadvantages of H. Partitioning
 * Data Integration is the process of combining data from different sources, formats, technologies to provide users with a translated and unified view of that data
 * When building the unified data model, you need to enforce data governance
 * Thus you need to consider lineage: for effective auditing, you should know where the data originated and where it is used at all times
+
+## NoSQL DBMS
+1. Key-Value Stores
+* Stores combinations of keys and values
+* The key serves as a unique identifier to retrieve an associated value. Values range from simple objects, like integers or strings, to more complex objects, like JSON structures
+* They are most frequently used for managing session information in web applications e.g managing shopping carts for online buyers.
+* An example DBMS is Redis
+
+2. Document Stores
+* Document stores are similar to key-value in that they consist of keys, each corresponding to a value
+* The difference is that the stored values, referred to as documents, provide some structure and encoding of the managed data.
+* That structure can be used to do more advanced queries on the data instead of just value retrieval.
+* A document database is a great choice for content management applications such as blogs and video platforms. Each entity that the application tracks can be stored as a single document.
+* An example of a document store DBMS is MongoDB
+
+3. Columnar Databases
+* Rather than grouping columns together into tables, columnar databases store each column in a separate file in the system’s storage
+* This allows for databases that are more scalable, and faster at scale.
+* Use a columnar database for big data analytics where speed is important
+* An example is Cassandra
+  
+4. Graph Databases
+* Here, the data is interconnected and best represented as a graph
+* This method is capable of lots of complexity
+* Graph databases are used by most social networks and pretty much any website that recommends anything based on your behavior
+* An example of a graph DBMS is Neo4j.
