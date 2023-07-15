@@ -136,3 +136,15 @@ Is the first step of dB design, which has three levels:
 * Managing dependencies between multiple MVs is achieved using Directed Acyclic Graphs (DAGs), which keep track of views
 * Pipeline scheduler tools e.g Airflow and Luigi, are used to schedule and run REFRESH statements
 * A DAG is a finite directed graph with no cycles
+
+## Database Partitioning
+* When tables grow to 100s of gigabytes or even terabytes, queries tend to become slow
+* Even when we've set indices correctly, these indices can become so large they don't fit into memory
+* At a certain point, it can make sense to split a table up into multiple smaller parts. This is the process called 'partitioning'
+* Partitioning fits into the physical data model, as we distribute the data over several physical entities
+* Two types of partitioning:
+    * Vertical Partitioning - splits up a table vertically by its columns, even when it's already fully normalized
+    * Horizontal Partitioning - splits up tables over the rows, e.g by splitting data using timestamp
+* Example query of H. partitioning in PostgreSQL:
+     ![Horizontal Partitioning](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Horizontal-Partitioning.PNG "Horizontal Partitioning")
+  
