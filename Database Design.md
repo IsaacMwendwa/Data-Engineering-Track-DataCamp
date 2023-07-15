@@ -108,3 +108,17 @@ Is the first step of dB design, which has three levels:
 
 4. Deletion Anomaly
     * Happens when you delete a record and unintentionally delete other data
+
+## Database Views
+
+* A view is the result set of a stored query on database. It is a virtual table, hence not stored in physical memory
+* Created as: `CREATE VIEW view_name AS you_query`
+* Benefits:
+    * Doesn't take up storage, except for query itself (which is minimal)
+    * Form of access control - hide sensitive columns and restrict what user can see
+    * Masks complexity of queries -- useful for highly normalized schemas
+
+### Granting/Revoking Access to a View
+* Syntax: `GRANT/REVOKE privilege(s) ON object TO/FROM role`
+* Where privileges --> SELECT, INSERT, UPDATE, DELETE; Objects --> table, view, schema; Roles --> dB user or group of dB users
+* 
