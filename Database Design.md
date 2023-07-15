@@ -161,3 +161,8 @@ Disadvantages of H. Partitioning
 * We can take partitioning one step further and distribute the partitions over several machines
 * When horizontal partitioning is applied to spread a table over several machines, it's called sharding
 * This brings the concept of massively parallel processing (MPP) databases, where each node, or machine, can do calculations on specific shards
+
+## Data Integration
+* Data Integration is the process of combining data from different sources, formats, technologies to provide users with a translated and unified view of that data
+* When building the unified data model, you need to enforce data governance
+* Thus you need to consider lineage: for effective auditing, you should know where the data originated and where it is used at all times
