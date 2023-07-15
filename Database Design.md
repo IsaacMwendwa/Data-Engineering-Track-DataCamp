@@ -120,5 +120,19 @@ Is the first step of dB design, which has three levels:
 
 ### Granting/Revoking Access to a View
 * Syntax: `GRANT/REVOKE privilege(s) ON object TO/FROM role`
-* Where privileges --> SELECT, INSERT, UPDATE, DELETE; Objects --> table, view, schema; Roles --> dB user or group of dB users
-* 
+    * Where privileges --> SELECT, INSERT, UPDATE, DELETE; Objects --> table, view, schema; Roles --> dB user or group of dB users
+* While you can update/insert records using views, it's best to leave them only for reads, not writes
+* To drop a view: `DROP VIEW view_name CASCADE/RESTRICT`
+    * Where RESTRICT returns an error when there are dependencies; and CASCADE drops views and dependent objects
+
+### Types of Views
+1. Non-materialized views -- referred to as views, which are virtual (only query stored, not results)
+2. Materialized Views - store the query results on disk, not the query itself
+* MVs are refreshed/rematerialized when prompted or scheduled
+* MVs are used when queries have long execution time (hours), and in data which is not updated often
+* They're also useful in data warehouses (OLAP), which are not write-intensive, hence less risk of outdated data
+* Syntax for creating MVs: `CREATE MATERIALIZED VIEW my_mv AS my_query;`, and can be refreshed using `REFRESH MATERIALIZED VIEW my_mv;`
+* You can also schedule MVs using cron - the UNIX based job scheduler
+* Managing dependencies between multiple MVs is achieved using Directed Acyclic Graphs (DAGs), which keep track of views
+* Pipeline scheduler tools e.g Airflow and Luigi, are used to schedule and run REFRESH statements
+* A DAG is a finite directed graph with no cycles
