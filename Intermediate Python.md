@@ -7,3 +7,15 @@
 <br> Syntax: `df[df["col"] > 20]`
 * Applying Boolean Operators for Numpy Arrays to filter Pandas DataFrames
 <br> Syntax for df with column "col" with values betweem 20 and 22: `df[np.logical_and(df["col"] > 20, df["col"] < 22)]`
+* Printing elements in a list with their indices using for loop:
+<br>Syntax: `for index, elem in enumerate(list):`
+<br> `print("index " + str(index) + ": " + str(elem))`
+
+#### Looping Data Structures
+1. Dictionary
+<br> `for key, value in dict.items(): print(key + ":" + str(value))`
+3. Numpy Arrays (especially 2D and above)
+<br> `for val in np.nditer(my_array): print(val)`
+4. Pandas DataFrame
+<br> Printing labels and rows: `for label, row in df.iterrows(): print(label + ": " + row)`
+<br> Printing specific column from rows: `for label, row in df.iterrows(): print(label + ": " + row["column")`
