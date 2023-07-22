@@ -19,3 +19,5 @@
 4. Pandas DataFrame
 <br> Printing labels and rows: `for label, row in df.iterrows(): print(label + ": " + row)`
 <br> Printing specific column from rows: `for label, row in df.iterrows(): print(label + ": " + row["column")`
+<br> Adding a new column by applying a function on one of the columns:
+<br> `df["new_column"] = df["existing_column"].apply(your_transform)`
