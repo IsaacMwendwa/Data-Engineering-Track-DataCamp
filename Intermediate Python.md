@@ -1,5 +1,9 @@
 ### Logic, Control Flow and Filtering
-* Comparison Operators --> greater than (>), less than (<), equal to (==), greater than or equal to (>=), less than or equal to (<=)
+* Comparison Operators --> greater than (>), less than (<), equal to (==), not equal to (!=), greater than or equal to (>=), less than or equal to (<=)
 * Boolean Operators ---> and, or, not
 * Boolean Operators for Numpy Arrays ---> logical_and(), logical_or(), logical_not().
-<br>Syntax: `np.logical_and(arr > 20, arr < 22)`
+<br>Syntax for array elements between 20 and 22: `np.logical_and(arr > 20, arr < 22)`
+* Applying Comparison Operators to filter Pandas DataFrames
+<br> Syntax: `df[df["col"] > 20]`
+* Applying Boolean Operators for Numpy Arrays to filter Pandas DataFrames
+<br> Syntax for df with column "col" with values betweem 20 and 22: `df[np.logical_and(df["col"] > 20, df["col"] < 22)]`
