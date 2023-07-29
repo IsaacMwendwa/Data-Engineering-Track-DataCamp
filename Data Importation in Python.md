@@ -99,4 +99,6 @@
   <br> `with engine.connect as con:`
   <br> `results = con.execute('SQL Query')`
   <br> `df = pd.DataFrame(results.fetchall())` # or .fetchmany(10) to import 10 rows instead of all
-  <br> `df.columns=results.keys()
+  <br> `df.columns=results.keys()`
+* You can achieve running SQL queries in a single line of code using Pandas:
+  <br> `df = pd.read_sql_query('SQL Query', engine)`
