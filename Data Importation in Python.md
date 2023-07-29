@@ -72,6 +72,15 @@
      <br> `for key in data['group1'].keys():`
      <br> `print(key)` # returns columns
    * To access the values as a numpy array:
-     <br> `print(np.array(data['group1']['column1'])`
+     <br> `print(np.array(data['group1']['column1']))`
 
-*  
+* MATLAB (Matrix Laboratory) Files
+   * Is a numerical computing environment, which is the industry standard in engineering and science
+   * Data is saved as .mat files
+   * Data is read and written using Scipy's methods: scipy.io.loadmat(), and scipy.io.savemat()
+   * To import:
+     <br> `import scipy.io`
+     <br> `mat = scipy.io.loadmat('filename.mat')`
+   * The variable mat is a dictionary, with keys corresponding to MATLAB variable names, and values corresponding to objects assigned to variables
+   * To access the keys: `print(mat.keys())`
+   * To access one value: `print(mat['key1'])`
