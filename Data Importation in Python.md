@@ -28,18 +28,22 @@
 * The best library for such situations is Pandas, the Python standard for importing flat files as dataframes
 
 ### Importing Other File Types
-* Pickle files, which are Python objects which are serialized (converted to sequence of bytes, or bytestream)
-<br> `import pickle`
-<br> `with open('filename.pkl', 'rb') as file:`
-<br> `data=pickle.load(file)`
-<br> `print (data)`
+* Pickle files
+   * Are Python objects (e.g. ML models, lists) which are serialized (converted to sequence of bytes, or bytestream)
+   * To import:
+   <br> `import pickle`
+   <br> `with open('filename.pkl', 'rb') as file:`
+   <br> `data=pickle.load(file)`
+   <br> `print (data)`
     * `rb` specifies that the file is both read only (r) and binary(b)
 
 * Excel Spreadsheets
-<br> `data = pd.ExcelFile(filename) ` # read Excel file to data variable
-<br> `print(data.sheet_names) ` # print sheets in file
-<br> `df1 = data.parse('sheet1') ` # create dataframe using sheet name
-<br> `df2 = data.parse(0) ` # create dataframe using sheet index
+   * Commonly used file type
+   * To import:
+   <br> `data = pd.ExcelFile(filename) ` # read Excel file to data variable
+   <br> `print(data.sheet_names) ` # print sheets in file
+   <br> `df1 = data.parse('sheet1') ` # create dataframe using sheet name
+   <br> `df2 = data.parse(0) ` # create dataframe using sheet index
 
 * SAS (Statistical Analysis System) Files
    * Mostly used in in business analytics and biostatistics
@@ -68,6 +72,6 @@
      <br> `for key in data['group1'].keys():`
      <br> `print(key)` # returns columns
    * To access the values as a numpy array:
-     <br> `print(np.array(data['group1']['column1'])
+     <br> `print(np.array(data['group1']['column1'])`
 
 *  
