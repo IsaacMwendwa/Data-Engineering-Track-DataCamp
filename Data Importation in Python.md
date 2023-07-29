@@ -47,7 +47,27 @@
    * To import the dataset files:
      <br> `from sas7bdat import SAS7BDAT`
      <br> `with SAS7BDAT('filename.sas7bdat') as file:`
-      <br> `df_sas = file.to_data_frame()`
+     <br> `df_sas = file.to_data_frame()`
 
 * Stata (Statistics + Data) Files
    * Mostly used in academic social sciences research, such as economics and epidemiology
+   * Have extension .dta
+   * To import:
+     <br> `data = pd.read_stata('filename.dta')`
+
+* HDF5 (Hierarchical Data Format version 5) Files
+   * Used for storing large quantities of numerical data (100s of GBs/TBs).
+   *  HDF5 itself can scale up to exabytes
+   * To import:
+     <br> `import h5py`
+     <br> `data = h5py.File('filename.hdf5', 'r')`
+   * To access the structure of the file, you use same method as that of a dictionary:
+     <br> `for key in data.keys():`
+     <br> `print(key)` # the results are HDF groups, which are analogous to directories
+   * To find the data in one HDF group:
+     <br> `for key in data['group1'].keys():`
+     <br> `print(key)` # returns columns
+   * To access the values as a numpy array:
+     <br> `print(np.array(data['group1']['column1'])
+
+*  
