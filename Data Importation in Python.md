@@ -1,7 +1,10 @@
-# Importation of Data from Flat Files
+# Data Importation in Python
 
-## Reading text files
-* Syntax:
+## Reading flat files
+* Flat files are basic text files containing records, that is, table data, without structured relationships.
+* This is in contrast to a relational database, in which columns of distinct tables can be related.
+* Examples of flat files: .txt, .csv (Excel files are not flat files, as they can contain many sheets)
+* To import:
 <br> `file = open('filename.txt', mode='r')`
 <br> `text=file.read()`
 <br> `file.close`
@@ -10,10 +13,6 @@
 <br> `with open('filename.txt', 'r') as file:`
 <br> `print(file.read())` # to display all text
 <br> `print(file.readLine())` #to display one line
-
-* Flat files are basic text files containing records, that is, table data, without structured relationships.
-* This is in contrast to a relational database, in which columns of distinct tables can be related.
-* Examples of flat files: .txt, .csv (Excel files are not flat files, as they can contain many sheets)
 
 ### Importing flat files using NumPy
 * If you now want to import a flat file and assign it to a variable, and all the data is numerical, you can use the package numpy to import the data as a numpy array
@@ -27,7 +26,7 @@
 * np.loadtxt() performs well for basic cases, but tends to break when we have columns having mixed datatypes
 * The best library for such situations is Pandas, the Python standard for importing flat files as dataframes
 
-### Importing Other File Types
+## Importing Other File Types
 * Pickle files
    * Are Python objects (e.g. ML models, lists) which are serialized (converted to sequence of bytes, or bytestream)
    * To import:
@@ -84,3 +83,20 @@
    * The variable mat is a dictionary, with keys corresponding to MATLAB variable names, and values corresponding to objects assigned to variables
    * To access the keys: `print(mat.keys())`
    * To access one value: `print(mat['key1'])`
+
+## Working with Relational Databases in Python
+* Create a SQLite database engine from sqlachemy:
+  <br> `from sqlachemy import create_engine`
+  <br> `engine=create_engine('sqlite:///DatabaseName.sqlite')`
+* To get table names: `engine.table_names()`
+* To run SQL queries:
+  <br> `con = engine.connect()`
+  <br> `results = con.execute('SQL Query')`
+  <br> `df = pd.DataFrame(results.fetchall())`
+  <br> `df.columns=results.keys()` # defines the column names in df
+  <br> `con.close()`
+* To save the hussle of closing the connection, you can use the context manager as:
+  <br> `with engine.connect as con:`
+  <br> `results = con.execute('SQL Query')`
+  <br> `df = pd.DataFrame(results.fetchall())` # or .fetchmany(10) to import 10 rows instead of all
+  <br> `df.columns=results.keys()
