@@ -13,7 +13,7 @@
 
 * Flat files are basic text files containing records, that is, table data, without structured relationships.
 * This is in contrast to a relational database, in which columns of distinct tables can be related.
-* Examples of flat files: .txt, .csv
+* Examples of flat files: .txt, .csv (Excel files are not flat files, as they can contain many sheets)
 
 ### Importing flat files using NumPy
 * If you now want to import a flat file and assign it to a variable, and all the data is numerical, you can use the package numpy to import the data as a numpy array
@@ -21,5 +21,33 @@
 
 #### Importing using np.loadtxt()
 * Syntax:
-<br> `data = np.loadtxt('filename.txt', delimiter=',', skiprows=1, usecols=[0, 2])`
+<br> `data = np.loadtxt(filename, delimiter=',', skiprows=1, usecols=[0, 2])`
 * `skiprows` is used when there is a string header, and `usecols` defines the columns you want e.g. 1st and 3rd columns
+* To read all data as strings: `data = np.loadtxt(filename.txt, delimiter=',', dtype=str)`
+* np.loadtxt() performs well for basic cases, but tends to break when we have columns having mixed datatypes
+* The best library for such situations is Pandas, the Python standard for importing flat files as dataframes
+
+### Importing Other File Types
+* Pickle files, which are Python objects which are serialized (converted to sequence of bytes, or bytestream)
+<br> `import pickle`
+<br> `with open('filename.pkl', 'rb') as file:`
+<br> `data=pickle.load(file)`
+<br> `print (data)`
+    * `rb` specifies that the file is both read only (r) and binary(b)
+
+* Excel Spreadsheets
+<br> `data = pd.ExcelFile(filename) ` # read Excel file to data variable
+<br> `print(data.sheet_names) ` # print sheets in file
+<br> `df1 = data.parse('sheet1') ` # create dataframe using sheet name
+<br> `df2 = data.parse(0) ` # create dataframe using sheet index
+
+* SAS (Statistical Analysis System) Files
+   * Mostly used in in business analytics and biostatistics
+   * Most common SAS files have extensions .sas7bdat (dataset files) and .sas7bcat (catalog files)
+   * To import the dataset files:
+     <br> `from sas7bdat import SAS7BDAT`
+     <br> `with SAS7BDAT('filename.sas7bdat') as file:`
+      <br> `df_sas = file.to_data_frame()`
+
+* Stata (Statistics + Data) Files
+   * Mostly used in academic social sciences research, such as economics and epidemiology
