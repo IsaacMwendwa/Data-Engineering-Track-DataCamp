@@ -139,3 +139,26 @@
   <br> `print(soup.prettify())` #printing soup
   <br> `for link in soup.find_all('a'): print(link.get('href'))` #printing all links in page
 
+## Interacting with APIs to import data from the web
+* An API is a set of protocols and routines for building and interacting with software applications
+
+### Loading data using JSON
+* Was invented for real-time server-to-browser communication
+* Syntax:
+  <br> `import json`
+  <br> `with open('file.json', 'r')` as json_file:
+  <br> `json_data = json.load(json_file)` # Returns a dict
+* To pull data from an API using requests:
+  <br> `r = requests.get(url)`
+  <br> `json_data = r.json()`
+  <br> `for key, value in json_data.items(): print(key + ':', value)`
+
+* To use Python lists as counter for many variables:
+  <br> `[clinton, trump, sanders, cruz] = [0, 0, 0, 0]` #  Initialize list to store tweet counts
+  <br> `for index, row in df.iterrows():`
+    <br> `clinton += word_in_text('clinton', row['text'])`
+    <br> `trump += word_in_text('trump', row['text'])`
+    <br> `sanders += word_in_text('sanders',row['text'])`
+    <br> `cruz += word_in_text('cruz', row['text'])`
+  * To get the counter list:
+    <br> `y = [clinton, trump, sanders, cruz]` # Counter List
