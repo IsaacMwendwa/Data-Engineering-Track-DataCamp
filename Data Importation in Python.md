@@ -118,13 +118,24 @@
 ### Performing HTTP Requests using urllib
 * Syntax:
   <br> `from urllib.request import urlopen, Request`
-  <br> `request = Request(url)`
-  <br> `response = urlopen(request)`
-  <br> `html = response.read()`
+  <br> `request = Request(url)` # Packages the request
+  <br> `response = urlopen(request)` # Sends the request and catches the response
+  <br> `html = response.read()` # Extract the response
   <br> `response.close()`
   
-### Performing HTTP Requests using requests
+### Performing HTTP Requests using requests (High Level)
 * Syntax:
   <br> `import requests`
   <br> `r = requests.get(url)`
   <br> `text = r.text`
+  
+### Scraping the web in Python: BeautifulSoup
+* Syntax:
+  <br> `from bs4 import BeautifulSoup`
+  <br> `import requests`
+  <br> `r = requests.get(url)`
+  <br> `html_doc = r.text`
+  <br> `soup = BeautifulSoup(html_doc)`
+  <br> `print(soup.prettify())` #printing soup
+  <br> `for link in soup.find_all('a'): print(link.get('href'))` #printing all links in page
+
