@@ -102,3 +102,9 @@
   <br> `df.columns=results.keys()`
 * You can achieve running SQL queries in a single line of code using Pandas:
   <br> `df = pd.read_sql_query('SQL Query', engine)`
+
+## Importing Data From the Web
+### Reading Flat Files from the Web
+* Syntax:
+  <br> `from urllib.request import urlretrieve`
+  <br> `urlretrieve(url, 'path_to_save.csv')` # Saving file locally
