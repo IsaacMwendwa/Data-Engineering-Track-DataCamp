@@ -108,3 +108,23 @@
 * Syntax:
   <br> `from urllib.request import urlretrieve`
   <br> `urlretrieve(url, 'path_to_save.csv')` # Saving file locally
+  <br> `df = pd.read_csv(url, sep=';')` # Reading directly without saving
+
+### Reading Non-flat Files from the Web
+* Syntax:
+  <br> `xls = pd.read_excel(url, sheet_name = None)` #To import all sheets, sheetname should be None
+  <br> for k, v in xls.items(): print(k)   # To display sheet names
+  
+### Performing HTTP Requests using urllib
+* Syntax:
+  <br> `from urllib.request import urlopen, Request`
+  <br> `request = Request(url)`
+  <br> `response = urlopen(request)`
+  <br> `html = response.read()`
+  <br> `response.close()`
+  
+### Performing HTTP Requests using requests
+* Syntax:
+  <br> `import requests`
+  <br> `r = requests.get(url)`
+  <br> `text = r.text`
