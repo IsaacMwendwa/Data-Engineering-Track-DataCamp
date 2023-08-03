@@ -9,5 +9,11 @@
 ### Cloud Services Models
 ![Cloud Services Models](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Cloud-Services-Models.PNG "Cloud Services Models")
 
+* FaaS (Function as a Service) is a variation on SaaS, except that now you're only concerned with a single function, or part of the software
+* For example, you can run identity authentication, or payment transactions
+* FaaS often uses a billing model called "serverless"
+* This is slightly misleading because the computations are still run on a server - what it means is that you pay for the service rather than paying to rent servers. 
+
 ### The Cloud Pyramid: Abstraction vs Control
 ![Cloud Pyramid](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Cloud-Pyramid.PNG "Cloud Pyramid")
+
