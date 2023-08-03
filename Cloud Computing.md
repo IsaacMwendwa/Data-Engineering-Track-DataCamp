@@ -8,3 +8,6 @@
 
 ### Cloud Services Models
 ![Cloud Services Models](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Cloud-Services-Models.PNG "Cloud Services Models")
+
+### The Cloud Pyramid: Abstraction vs Control
+![Cloud Pyramid](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Cloud-Pyramid.PNG "Cloud Pyramid")
