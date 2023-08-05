@@ -26,4 +26,15 @@
   <br> `df['col'] = pd.to_datetime(df['col']).dt.date`  # converting object to date
   <br> `today_date = dt.date.today()`  # date today
 
-####
+#### Uniqueness Constraints
+* To find duplicate rows:
+  <br> `cols = ['col1', 'col2', 'col3']` # column names to check for duplication
+  <br> `duplicates = df.duplicated(subset = 'cols', keep = 'first')` # keep can be first/last/False (False keeps all)
+* To drop duplicates: `df.drop_duplicates(inplace = True)` # without subset defined, drops complete duplicates. Keep first is default behaviour
+* Exercise:
+   * Treat duplicated rows by first dropping complete duplicates.
+   * Then merge the incomplete duplicate rows into one while keeping the average duration, and the minimum user_birth_year for each set of incomplete duplicate rows.
+   * Use groupby and summary statistics for the exercise
+    * ![Treating Complete and Incomplete Duplicates](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Treating-Complete-and-Incomplete-Duplicates.PNG "Treating Complete and Incomplete Duplicates")
+
+* To sort dataframe: `df.sort_values(by= ['col1, col2'], ascending=False)[['col1, col2']]` #sorts in descending order
