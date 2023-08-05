@@ -15,6 +15,15 @@
 * Outliers in categorical data can be seen when you plot a histogram, and there are connected bars
 * Options to deal with out of range data:
    * Drop the data, but only drop data when a small proportion of your dataset is affected by out of range values
+        <br> `df['col'] = df[df['col'] <= 5]` # Drop values using filtering
+        <br> `df.drop(df[df['col'] <= 5].index, inplace = True)` # Drop using .drop()
    * Setting custom minimums or maximums to your columns
+        <br> `df.loc[df['col'] > 5, 'col'] = 5`   # Set col > 5 to 5 
    * Treat data as missing, and impute
    * Setting a custom value dependent on the business assumptions behind our data
+
+* Converting object to date type
+  <br> `df['col'] = pd.to_datetime(df['col']).dt.date`  # converting object to date
+  <br> `today_date = dt.date.today()`  # date today
+
+####
