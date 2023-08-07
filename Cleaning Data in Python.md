@@ -40,9 +40,31 @@
 * To sort dataframe: `df.sort_values(by= ['col1, col2'], ascending=False)[['col1, col2']]` #sorts in descending order
 
 ### Text and categorical data problems
+#### Membership problems
 * Categorical data represent variables that have predefined finite set of categories. Examples of this range from marriage status, household income categories, loan status and others
 * Since categorical data represent a predefined set of categories, they can't have values that go beyond these predefined categories
 * To deal with inconsistent categories, we use two main types of joins:
    * Anti joins, take in two DataFrames A and B, and return data from one DataFrame that is not contained in another
    * Inner joins, return only the data that is contained in both DataFrames
-* 
+* To deal with inconsistent categories:
+   <br> `inconsistent_categories = set(df1['col']).difference(df_categories['col'])`  # get inconsistent categories
+   <br> `inconsistent_rows = df1['col'].isin(inconsistent_categories)`  # get inconsistent rows
+   <br> `inconsistent_data = df1['inconsistent_rows']`    # get inconsistent data
+   <br> `consistent_data = df1[~inconsistent_rows]`      # get consistent data
+
+#### Value Inconsistencies
+* A common categorical data problem is having values that slightly differ because of capitalization
+* To count unique values:
+   * `df['col'].value_counts()` # works with series only
+   * `df.groupby('col').count()` # works with dataframe
+* To sort issue, you can uppercase or lowercase column as:
+   * `df['col'] = df['col'].str.lower()`
+* Another common problem with categorical values are leading or trailing spaces. Sorted by:
+   * `df = df['col'].str.strip()`
+* To create named categories out of data e.g. creating incoming groups from income data, we use pd.cut():
+   * `ranges = [0, 200000, 500000, np.inf]`   # define ranges
+   * `group_names = ['0-200K', '200K-500K', '500K+']`   # define labels
+   * `df['income_group'] = pd.cut(df['income'], bins=ranges, labels=group_names)`  # create income group column
+* To reduce categories to fewer ones, we create a mapping dictionary and replace as:
+   * `mapping_dict = {'old_cat1' : 'new_cat1', 'old_cat2' : 'new_cat1', ....}`
+   * `df['col'] = df['col'].replace(mapping_dict)`
