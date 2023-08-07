@@ -68,3 +68,4 @@
 * To reduce categories to fewer ones, we create a mapping dictionary and replace as:
    * `mapping_dict = {'old_cat1' : 'new_cat1', 'old_cat2' : 'new_cat1', ....}`
    * `df['col'] = df['col'].replace(mapping_dict)`
+
