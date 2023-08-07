@@ -38,3 +38,11 @@
     * ![Treating Complete and Incomplete Duplicates](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Treating-Complete-and-Incomplete-Duplicates.PNG "Treating Complete and Incomplete Duplicates")
 
 * To sort dataframe: `df.sort_values(by= ['col1, col2'], ascending=False)[['col1, col2']]` #sorts in descending order
+
+### Text and categorical data problems
+* Categorical data represent variables that have predefined finite set of categories. Examples of this range from marriage status, household income categories, loan status and others
+* Since categorical data represent a predefined set of categories, they can't have values that go beyond these predefined categories
+* To deal with inconsistent categories, we use two main types of joins:
+   * Anti joins, take in two DataFrames A and B, and return data from one DataFrame that is not contained in another
+   * Inner joins, return only the data that is contained in both DataFrames
+* 
