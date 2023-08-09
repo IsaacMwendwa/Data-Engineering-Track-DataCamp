@@ -69,3 +69,8 @@
    * `mapping_dict = {'old_cat1' : 'new_cat1', 'old_cat2' : 'new_cat1', ....}`
    * `df['col'] = df['col'].replace(mapping_dict)`
 
+### Treating Date Data
+* Converting column with multiple date formats to datetime object:
+  <br> `df['col'] = pd.to_datetime(df['col'], infer_datetime_format=True, errors='coerce')` # errors='coerce' return NaT for rows whose conversion failed
+  <br> `df['col'] = df['col'].dt.strftime("%d-%m-%Y")` #format datetime col
+  <br> `df['year'] = df['col'].dt.strftime("%Y")` #Extract Year Column
