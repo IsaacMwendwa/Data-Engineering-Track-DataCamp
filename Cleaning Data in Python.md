@@ -74,3 +74,11 @@
   <br> `df['col'] = pd.to_datetime(df['col'], infer_datetime_format=True, errors='coerce')` # errors='coerce' return NaT for rows whose conversion failed
   <br> `df['col'] = df['col'].dt.strftime("%d-%m-%Y")` #format datetime col
   <br> `df['year'] = df['col'].dt.strftime("%Y")` #Extract Year Column
+
+### Cross Field Validation (CFD)
+* A common challenge when merging data from different sources is data integrity
+* CFD is the use of multiple fields in your dataset to sanity check the integrity of your data
+* Example of CFD in flights data:
+  * ![CFD in Flight Data](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/CDF-in-Flight-Data.PNG "CFD in Flight Data")
+* Example of CFD in Age and Birthday data:
+  * ![CFD in Age and Birthday Data](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/CFD-in-Age.PNG "CFD in Age and Birthday Data")
