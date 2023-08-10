@@ -95,3 +95,23 @@
 * Replacing with statistical measures:
 <br> `col_mean = df['col'].mean()`
 <br> `df_imputed = df.fillna({'col': col_mean})`
+
+## Record Linkage
+* Record linkage is a powerful technique used to merge multiple datasets together, used when values have typos or different spellings
+* Commonly used to link records by calculating the similarity between strings— which can be used to join two datasets into one clean master dataset
+
+### Minimum Edit Distance (MED)
+* Minimum edit distance is a systematic way to identify how close 2 strings are
+* For example, consider the following two words: intention, and execution
+* The minimum edit distance between them is the least possible amount of steps, that could get us from the word intention to execution, with the available operations being:
+     * inserting new characters, deleting them, substituting them, and transposing consecutive characters.
+* The lower the edit distance, the closer two words are
+* To perform simple string comparison:
+  <br> `from thefuzz import fuzz`
+  <br> `fuzz.WRatio('Reeding', 'Reading')` # compare two words
+* To compare a string with an array of strings:
+  
+  * ![Compare string with array fuzzy](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Compare-string-with-array-fuzzy.PNG "Compare string with array fuzzy")
+
+* To collapse many categories, the .replace() method may not be feasible. To achieve this, we can use string similarity:
+   * ![Collapsing of many variations using string similarity](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Collapsing-many-variations.PNG "Collapsing of many variations using string similarity")
