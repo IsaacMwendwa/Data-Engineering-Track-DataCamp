@@ -82,3 +82,10 @@
   * ![CFD in Flight Data](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/CDF-in-Flight-Data.PNG "CFD in Flight Data")
 * Example of CFD in Age and Birthday data:
   * ![CFD in Age and Birthday Data](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/CFD-in-Age.PNG "CFD in Age and Birthday Data")
+
+### Missing Data
+* Get summary of missingness: `df.isna().sum()`
+* Missingness types:
+   * Missing Completely at Random (MCAR) - no systematic relationship between missing data and other values. Stems from data entry errors
+   * Missing at Random (MAR) - is when there is a systematic relationship between missing data and other observed values e.g CO2 data being missing for low temperatures
+   * Missing Not at Random (MNAR) - there is a systematic relationship between the missing data and unobserved values e.g. when it's really hot outside, the thermometer might stop working, so we don't have temperature measurements for days with high temperatures
