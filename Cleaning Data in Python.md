@@ -89,3 +89,9 @@
    * Missing Completely at Random (MCAR) - no systematic relationship between missing data and other values. Stems from data entry errors
    * Missing at Random (MAR) - is when there is a systematic relationship between missing data and other observed values e.g CO2 data being missing for low temperatures
    * Missing Not at Random (MNAR) - there is a systematic relationship between the missing data and unobserved values e.g. when it's really hot outside, the thermometer might stop working, so we don't have temperature measurements for days with high temperatures
+
+#### Treating Missing Data
+* Dropping missing values: `df = df.dropna(subset = ['col'])`
+* Replacing with statistical measures:
+<br> `col_mean = df['col'].mean()`
+<br> `df_imputed = df.fillna({'col': col_mean})`
