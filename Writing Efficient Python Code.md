@@ -6,7 +6,8 @@
 * Second, efficient code allocates resources skillfully and isn't subjected to unnecessary overhead
 * Although your definition of fast runtime and small memory usage may depend on the task at hand, the goal of writing efficient code is still to reduce both latency and overhead
 * Pythonic code is code that follows the best practices and guiding principles of Python. Pythonic code tends to be less verbose and easier to interpret
-* The Zen of Python is a list of a few idioms and best practices that summarize Python's design philosophy
+* The Zen of Python is a list of a 19 idioms and best practices that summarize Python's design philosophy
+* It is one of Python Enhancement Proposals (PEP20), and can be accessed by running the `import this` command from the IPython console
   * ![Zen of Python](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/The-Zen-of-Python.PNG "Zen of Python")
 * Writing efficient Python code employs among other techniques, list comprehension:
   * `newList = [ expression(element) for element in oldList if condition ]`
