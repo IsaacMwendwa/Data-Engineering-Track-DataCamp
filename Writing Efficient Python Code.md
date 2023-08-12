@@ -24,7 +24,7 @@
 * Pythonic way using list comprehension:
 <br> `best_list = [name for name in names if len(name) >= 6]`
 
-### Defaulting to built-in functions
+### Reducing loops to built-in functions
 #### 1. range()
 * Create list of nums from 1-10:
 <br> `num = range(0, 11)`
@@ -36,3 +36,38 @@
 #### 2. enumerate()
 * enumerate creates an index item pair for each item in the object provided
   * ![Enumerate Function](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Enumerate-built-in-function.PNG "Enumerate Function")
+* We can also specify the starting index of enumerate with the keyword argument start: `indexes = enumerate(list_a, start=5)`
+* Example: for a list `names = ['Jerry', 'Kramer', 'Elaine', 'George', 'Newman']` ordered according to arrival, attach an index representing the arrival order:
+  * ![Enumerate Example](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/map-with-lambda.PNG "Enumerate Example")
+#### 3. map()
+* map() can also be used with a lambda (an anonymous function)
+* We can use map and a lambda expression to apply a function, which we've defined on the fly, to our original list
+* The map function provides a quick and clean way to apply a function to an object iteratively without writing a for loop 
+ ![Map with lambda](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/map-with-lambda.PNG "Map with lambda")
+* Example to convert names to uppercase:
+  *  ![Map Example](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Enumerate-example.PNG "Map Example")
+
+### Power of Numpy Arrays
+* NumPy arrays provide a fast and memory efficient alternative to Python lists
+* To create: `nums_arr = np.array(range(5))`
+
+#### 1. NumPy Array Homogeneity
+* NumPy arrays are homogeneous, which means that they must contain elements of the same type
+* Homogeneity allows NumPy arrays to be more memory efficient and faster than Python lists
+* Requiring all elements be the same type eliminates the overhead needed for data type checking
+
+#### 2. NumPy Array Broadcasting
+* When analyzing data, you'll often want to perform operations over entire collections of values quickly
+* Lists don't support broadcasting, hence operations on entire list require fro loops/list comprehension
+* NP arrays are advantageous because of their broadcasting functionality
+* NumPy arrays vectorize operations, so they are performed on all elements of an object at once. This allows us to efficiently perform calculations over entire arrays
+* e.g to square all elements in array, we square the array itself: `np_arr ** 2`
+
+#### 3. NumPy Array Indexing
+* Another advantage of NumPy arrays is their indexing capabilities
+* When comparing basic indexing between a one-dimensional array and list, the capabilities are identical
+* When using two-dimensional arrays and lists, the advantages of arrays are clear, as lists present more verbose syntax
+  *  ![List vs NP Array Indexing](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Array-indexing-capabilities.PNG "List vs NP Array Indexing")
+
+#### 4. NumPy Array Boolean Indexing
+*  ![NumPy Array Boolean Indexing](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Array-boolean-indexing.PNG "NumPy Array Boolean Indexing")
