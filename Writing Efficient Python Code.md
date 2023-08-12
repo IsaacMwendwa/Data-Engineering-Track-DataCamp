@@ -86,9 +86,11 @@
    * ![Formal names and literal syntax](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/50405132-8265-49dd-b2bd-4eb97902c2db "Formal names and literal syntax")
 
 ### Profiling Code
-* %timeit, which works well with bite-sized code
+* %timeit works well with bite-sized code
 * If we wanted to time a large code base or see the line-by-line runtimes within a function, we use code profiling
 * Code profiling is a technique used to describe how long, and how often, various parts of a program are executed
 * The beauty of a code profiler is its ability to gather summary statistics on individual pieces of our code without using magic commands like `%timeit`
 * We will focus on the `line_profiler` package to profile a function's runtime line-by-line
 * To install it: `pip install line_profiler`; and to use it, you load to environment as `%load_ext line_profiler`
+* Syntax of usage: `%lprun -f name_of_function full_function_call(arg1, arg2)` # -f implies that we are profiling a function
+    * ![lprun output](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/54c8849d-61a7-44e4-a45c-1de90e038609 "lprun output")
