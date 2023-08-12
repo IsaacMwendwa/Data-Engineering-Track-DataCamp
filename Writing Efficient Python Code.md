@@ -1,4 +1,4 @@
-# Writing Efficient Python Code
+![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/0a7be965-786a-40d9-9323-70ede573a92e)# Writing Efficient Python Code
 
 ## Introduction
 * Efficient code refers to code that satisfies two key concepts
@@ -71,3 +71,6 @@
 
 #### 4. NumPy Array Boolean Indexing
 *  ![NumPy Array Boolean Indexing](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Array-boolean-indexing.PNG "NumPy Array Boolean Indexing")
+
+### Wrap it all
+* ![Utilizing Range, Enumerate, Map](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Utilizing-range-enumerate-map.PNG "Utilizing Range, Enumerate, Map")
