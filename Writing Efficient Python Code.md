@@ -23,3 +23,16 @@
 <br> `better_list.append(name)`
 * Pythonic way using list comprehension:
 <br> `best_list = [name for name in names if len(name) >= 6]`
+
+### Defaulting to built-in functions
+#### 1. range()
+* Create list of nums from 1-10:
+<br> `num = range(0, 11)`
+<br> `list_num = list(num)`
+* Create list of even numbers: range(start, stop, step)
+<br> `even_nums = range(2, 11, 2)`
+<br> `even_nums_list = list(even_nums)`
+
+#### 2. enumerate()
+* enumerate creates an index item pair for each item in the object provided
+ * ![Enumerate Function](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Enumerate-function.PNG "Enumerate Function")
