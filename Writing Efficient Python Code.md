@@ -1,4 +1,4 @@
-![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/0a7be965-786a-40d9-9323-70ede573a92e)# Writing Efficient Python Code
+# Writing Efficient Python Code
 
 ## Introduction
 * Efficient code refers to code that satisfies two key concepts
@@ -74,3 +74,21 @@
 
 ### Wrap it all
 * ![Utilizing Range, Enumerate, Map](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Utilizing-range-enumerate-map.PNG "Utilizing Range, Enumerate, Map")
+
+## Timing and Profiling Code
+### Timeit
+* `%timeit` is prefixed before single lines of code, and `%%timeit` is written in a new line before a block of code
+* Timeit gives output based on the following metrics (listed from fastest to slowest):
+   * ![Comparing runtime metrics](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/8a25d8bf-2a09-4b48-b0b3-e4a431820523 "Comparing runtime metrics")
+* The number of runs represents how many iterations you'd like to use to estimate the runtime. The number of loops represents how many times you'd like the code to be executed per run
+* To specify the arguments for 2 runs and 10 loops: `%timeit -r2 -n10 expression_to_time`
+* A simple comparison of creating data structures using formal names and literal syntax shows that literal syntax is faster:
+   * ![Formal names and literal syntax](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/50405132-8265-49dd-b2bd-4eb97902c2db "Formal names and literal syntax")
+
+### Profiling Code
+* %timeit, which works well with bite-sized code
+* If we wanted to time a large code base or see the line-by-line runtimes within a function, we use code profiling
+* Code profiling is a technique used to describe how long, and how often, various parts of a program are executed
+* The beauty of a code profiler is its ability to gather summary statistics on individual pieces of our code without using magic commands like `%timeit`
+* We will focus on the `line_profiler` package to profile a function's runtime line-by-line
+* To install it: `pip install line_profiler`; and to use it, you load to environment as `%load_ext line_profiler`
