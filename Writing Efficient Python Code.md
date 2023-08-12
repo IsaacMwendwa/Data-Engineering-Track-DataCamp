@@ -35,4 +35,3 @@
 
 #### 2. enumerate()
 * enumerate creates an index item pair for each item in the object provided
- * ![Enumerate Function](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/blob/main/Images/Enumerate-function.PNG "Enumerate Function")
