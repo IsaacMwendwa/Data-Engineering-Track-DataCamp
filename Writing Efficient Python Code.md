@@ -103,8 +103,12 @@
 * We'll use the `memory_profiler` package that is very similar to the `line_profiler` package
 * To install: `pip install memory_profiler`
 * Syntax of usage: `%mprun -f name_of_function full_function_call(arg1, arg2)
-* One drawback to using %mprun is that any function profiled for memory consumption must be defined in a .py file and imported
+* One drawback to using %mprun is that any function profiled for memory consumption must be defined in a filename.py file and imported
 * Steps:
-    <br>`from filename.py import name_of_function`
     <br>`%load_ext memory_profiler`
+    <br>`from filename import name_of_function`
     <br>`%mprun -f name_of_function full_function_call(arg1, arg2)`
+    * ![mprun output](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/d83df107-a44f-43c1-b71e-c9db8ab2e6b7 "mprun output")
+* Note that the memory is reported in mebibytes. Although one mebibyte is not exactly the same as one megabyte, for our purposes, we can assume they are close enough to mean the same thing
+* The memory_profiler package inspects memory consumption by querying the operating system. This might be slightly different from the amount of memory that is actually used by the Python interpreter
+* Thus, results may differ between platforms and even between runs
