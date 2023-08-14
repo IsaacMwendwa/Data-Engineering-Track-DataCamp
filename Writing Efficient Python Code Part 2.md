@@ -44,3 +44,14 @@
      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/6a67203b-f278-48b0-a11c-e243aa9b9802)
 * Example of eliminating loops using Numpy in a np array:
      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/cf37d41e-1034-40e3-a5a6-c17771c82a4c)
+* Exercise to eliminate loops: Pokemon game:
+    * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/13e6897b-db18-413c-b900-9249cc5a750d)
+
+## Writing Better Loops
+* The best way to make a loop more efficient is to analyze what's being done within the loop. We want to make sure that we aren't doing unnecessary work in each iteration
+* If a calculation is performed for each iteration of a loop, but its value doesn't change with each iteration, it's best to move this calculation outside (or above) the loop
+* If a loop is converting data types with each iteration, it's possible that this conversion can be done outside (or below) the loop using a map function (Holistic conversions)
+* Anything that can be done once should be moved outside of a loop
+* Example of holistic conversions:
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/5ab8ddc3-941f-45a3-b8b1-507dafae016c)
+ 
