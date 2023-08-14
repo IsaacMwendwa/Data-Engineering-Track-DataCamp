@@ -21,3 +21,16 @@
     * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/f2fb3ad6-9033-4350-91c1-606c1a39dd8f)
 * A more efficient solution to create combinations is:
     * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/ead87aa8-4675-43b9-9e37-32a78c1f34b8)
+
+## Set Theory
+* Often, we'd like to compare two objects to observe similarities and differences between their contents
+* When doing this type of comparison, it's best to leverage a branch of mathematics called set theory
+*  A set is defined as a collection of distinct elements
+*  Thus, we can use a set to collect unique items from an existing object e.g. `unique_set = set(list_a)`
+* Python comes with a built-in set data type. Sets come with some handy methods we can use for comparing
+     * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/efc461da-ef22-4e35-9c36-9c382b3d1c8a)
+     * Note that `set_a.union(set_b)` collects unique items that appear in the sets
+     * Symmetric difference collects items that exist in exactly one of the sets (but not both)
+* Example: Get items which appear in both lists without using for loops:
+     * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/0d79662e-82da-445a-a27b-43936b176eed)
+* 
