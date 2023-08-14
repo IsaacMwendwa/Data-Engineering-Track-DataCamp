@@ -33,4 +33,14 @@
      * Symmetric difference collects items that exist in exactly one of the sets (but not both)
 * Example: Get items which appear in both lists without using for loops:
      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/0d79662e-82da-445a-a27b-43936b176eed)
-* 
+
+ ## Eliminating Loops
+ * Although using loops when writing Python code isn't necessarily a bad design pattern, using extraneous loops can be inefficient and costly
+ * Benefits of eliminating loops:
+      * Fewer lines of code
+      * Better code readability (Zen - Flat is better than nested)
+      * Efficiency gains
+* Example of finding sum of rows in a list of lists: (eliminating loops using built-ins)
+     * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/6a67203b-f278-48b0-a11c-e243aa9b9802)
+* Example of eliminating loops using Numpy in a np array:
+     * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/cf37d41e-1034-40e3-a5a6-c17771c82a4c)
