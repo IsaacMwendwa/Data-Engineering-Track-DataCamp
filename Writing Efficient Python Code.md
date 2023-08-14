@@ -58,7 +58,7 @@
 
 #### 2. NumPy Array Broadcasting
 * When analyzing data, you'll often want to perform operations over entire collections of values quickly
-* Lists don't support broadcasting, hence operations on entire list require fro loops/list comprehension
+* Lists don't support broadcasting, hence operations on entire list require for loops/list comprehension
 * NP arrays are advantageous because of their broadcasting functionality
 * NumPy arrays vectorize operations, so they are performed on all elements of an object at once. This allows us to efficiently perform calculations over entire arrays
 * e.g to square all elements in array, we square the array itself: `np_arr ** 2`
@@ -90,7 +90,21 @@
 * If we wanted to time a large code base or see the line-by-line runtimes within a function, we use code profiling
 * Code profiling is a technique used to describe how long, and how often, various parts of a program are executed
 * The beauty of a code profiler is its ability to gather summary statistics on individual pieces of our code without using magic commands like `%timeit`
+
+#### Code profiling for runtime
 * We will focus on the `line_profiler` package to profile a function's runtime line-by-line
 * To install it: `pip install line_profiler`; and to use it, you load to environment as `%load_ext line_profiler`
 * Syntax of usage: `%lprun -f name_of_function full_function_call(arg1, arg2)` # -f implies that we are profiling a function
     * ![lprun output](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/54c8849d-61a7-44e4-a45c-1de90e038609 "lprun output")
+* Note that the total time reported when using %lprun and %timeit do not match. Remember, %timeit uses multiple loops in order to calculate an average and standard deviation of time, as compared to %lprun
+
+#### Code profiling for memory usage
+* Just like we've used code profiling to gather detailed stats on runtimes, we can also use code profiling to analyze the memory allocation for each line of code in our code base
+* We'll use the `memory_profiler` package that is very similar to the `line_profiler` package
+* To install: `pip install memory_profiler`
+* Syntax of usage: `%mprun -f name_of_function full_function_call(arg1, arg2)
+* One drawback to using %mprun is that any function profiled for memory consumption must be defined in a .py file and imported
+* Steps:
+    <br>`from filename.py import name_of_function`
+    <br>`%load_ext memory_profiler`
+    <br>`%mprun -f name_of_function full_function_call(arg1, arg2)`
