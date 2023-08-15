@@ -55,3 +55,30 @@
 * Example of holistic conversions:
    * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/5ab8ddc3-941f-45a3-b8b1-507dafae016c)
  
+# Pandas Optimizations
+* Pandas is a library used for data analysis
+* The main data strucuture of pandas is the DataFrame, a tabular data structure with labeled rows and columns (built on top of Numpy Array structure
+
+### Iterating Pandas DF with .iterrows()
+* .iterrows() returns each DataFrame row as a tuple of (index, pandas Series) pairs
+* This means each object returned from .iterrows() contains the index of each row as the first element and the data in each row as a pandas Series as the second element
+* Example: calculate a new column for storing a team's win percentage = Wins ('W') / Games ('G'):
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/571faf9b-d3e6-4a3b-aab6-37de8f44bab4)
+
+### Iterating with .itertuples()
+* We can use .itertuples() to loop over our DataFrame rows instead, which is a faster method
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/d4bd2ad5-f57a-4b6e-bccc-6bb4f010b8c9)
+
+### Pandas alternative to looping
+* You can loop over DataFrames row-by-row with ease using .iterrows() and .itertuples()
+* However, in order to write efficient code, we want to avoid looping when possible
+* Thus we use .apply() acts like the map function
+* It takes a function as an input and applies this function to an entire DataFrame
+* Since we are working with tabular data, we must specify an axis that we'd like our function to act on
+* Must specify an axis to apply (0 for columns; 1 for rows)
+* Just like the map function, pandas' .apply() method can be used with anonymous functions or lambdas
+* Example 1:
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/cb69422b-cfd9-4a7b-b21a-252c05ef39ed)
+* Example 2:
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/76aa6810-c8c4-4519-afbe-2c81aace7fc3)
+  
