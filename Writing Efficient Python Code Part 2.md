@@ -69,7 +69,7 @@
 * We can use .itertuples() to loop over our DataFrame rows instead, which is a faster method
       * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/d4bd2ad5-f57a-4b6e-bccc-6bb4f010b8c9)
 
-### Pandas alternative to looping
+### Pandas alternative to looping - .apply()
 * You can loop over DataFrames row-by-row with ease using .iterrows() and .itertuples()
 * However, in order to write efficient code, we want to avoid looping when possible
 * Thus we use .apply() acts like the map function
@@ -82,3 +82,10 @@
 * Example 2:
       * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/76aa6810-c8c4-4519-afbe-2c81aace7fc3)
   
+### Optimal pandas iterating - using Numpy arrays
+* Since pd is built on top of NumPy, we can grab any of these DataFrame column's values as a NumPy array using the `.values` property:
+      * `col_arr = df['col'].values`
+* The beauty of knowing that pandas is built on NumPy can be seen when taking advantage of a NumPy array's broadcasting abilities
+* Remember, this means we can vectorize our calculations, and perform them on entire arrays all at once
+* Example of faster, and more readable code using np arrays:
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/6cccb668-7dc4-4a19-922a-49a94ca28ab4)
