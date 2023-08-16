@@ -59,3 +59,25 @@
 * To show line-by-line changes and associated metadata:
    * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/17e4a167-2ae7-4d21-ab7f-f968c229ea8b)
 
+### Undoing Changes before Committing
+* If you accidentally added a file (which you didn't want to save coz you were still working on it), you remove it from the staging area (unstage file):
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/18af7a99-fdd2-4cdb-b520-6b4336539be4)
+* To undo changes in an unstaged file:
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/3b6bc4fe-e92e-45b5-9cd3-dfab716564d8)
+* To undo changes to all unstaged files in repo:
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/0f1fe37b-63b3-403e-bfd9-b1432b17c963)
+
+### Restoring and Reverting
+* To customize log output (especially to confine output to a few commits):
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/aea8fbbf-3123-48a7-8824-c222e5a34dae)
+* We can also customize git log by date as follows:
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/8cedc2d7-da82-4b39-b839-0f8c3213ca35)
+* Restoring an old version of a file (Part 1):
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/6e705e07-a8c2-4426-bc33-4533c7377ac3)
+* Restoring an old version of a file (Part 2):
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/5477424d-c3f6-4681-a9a2-51bf5c13252c)
+* Restoring a repo to a previous state(restore old versions of all files):
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/441da7cd-891f-4713-88e8-a28095f8282d)
+* Cleaning a repo:
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/f9d60384-e747-4c37-9d8b-f9298887f4d9)
+  
