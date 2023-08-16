@@ -86,4 +86,5 @@
 * To configure global email:
       * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/6f6220ab-86d8-4824-9b7d-b24046876533)
 * To ignore specific files, we put the files in a `.ignore` file:
-      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/21f8411c-247f-45b6-8125-7eb1c9ddc474)
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/5e5377c5-9eef-47d9-bacc-2d852200c2f7)
+
