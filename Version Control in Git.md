@@ -1,4 +1,4 @@
-# Version Control in Git
+![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/21f8411c-247f-45b6-8125-7eb1c9ddc474)# Version Control in Git
 
 ## Introduction
 * Version is the contents of a file at a given point in time. It also includes metadata, or information associated with the file, such as the author, where it is located, the file type, and when it was last saved
@@ -13,7 +13,7 @@
 * Also, Git automatically notifies us when our work conflicts with someone else's, so it's harder to accidentally overwrite content
 * Additionally, Git can synchronize work done by different people on different machines.
 
-## Saving Files and Commiting
+### Saving Files and Commiting
 * A Git repository consists of 2 parts:
     * Files and directories we create/edit
     * A directory called .git, which stores all extra information that Git records about the project's history
@@ -35,3 +35,27 @@
 * Adding HEAD, which is a shortcut for the most recent commit, allows us to see a difference between the report file in the staging area and the version in the last commit
 * To compare multiple staged files with last commit, we omit the filename in the command:
     * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/83d950be-d378-4333-b35c-c6b343d567d1)
+
+## Making Changes
+### Storing data with Git
+* Git stores data through commits, which have three parts
+* The first is the commit itself, which contains metadata such as the author, commit message, and time of the commit
+* The second part is a tree, which tracks the names and locations in the repo when that commit happened.
+* For each file listed in the tree, there is a blob (3rd Part), which is short for binary large object. A blob may contain data of any kind. Blobs contain a compressed snapshot of the contents of the file when the commit happened
+* To view commit info: `git log`
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/f2220c47-9f3c-424d-b27d-69ec09b884ff)
+ * To find a particular commit which could have brought errors:
+       * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/cb002756-e446-4207-bdb5-86ea2989fa2a)
+* To see the ouptut of git show:
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/2470612e-2394-4dbd-bcc9-4a2da89c903c)
+
+### Viewing changes
+* Comparing changes between commits: a staged file with the last commit
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/67668eaf-bf9c-42d6-9b44-3975e2c397cb)
+* Using HEAD with git show
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/a9185e0e-4559-429b-aa3f-a6559e240df8)
+* Note that `git show` is useful for viewing changes made in a particular commit; while `git diff` compares changes between two commits
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/0e520166-ca5b-4d49-ad3c-202cd2143eb9)
+* To show line-by-line changes and associated metadata:
+   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/17e4a167-2ae7-4d21-ab7f-f968c229ea8b)
+
