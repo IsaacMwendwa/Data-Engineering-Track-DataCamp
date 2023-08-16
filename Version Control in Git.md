@@ -131,3 +131,57 @@
 * While it's important that we know how to deal with conflicts, the best approach is to lower the chances of conflicts occurring
 * The ideal approach is to use each branch for a specific task. We should avoid editing the same file in multiple branches.
 * While it doesn't guarantee we'll avoid creating a conflict, it does reduce the risk
+
+## 4. Collaborating with Git
+### Creating repos
+* To create a new repo:
+  * Create repo: `git init repo_name`
+  * Cd to repo directory: `cd repo_name`
+  * Confirm git repo has initialized correctly: `git status`
+* To convert an exisiting project into a repo:
+  * Convert the directory to a Git repo: `git init`
+  * Add files and commit
+* We should avoid creating a Git repo inside another Git repo, also known as nested repos --> this creates 2 .git directories
+* Unfortunately, as we try to make commits, Git will get confused about which directory it needs to update
+* Generally, nested repos are not necessary except when working on extremely large and complex data projects
+
+### Working with remote repos (remotes)
+* A remote repo is a repo stored in the cloud through an online repo hosting service such as GitHub
+* Key benefits to using remotes
+  * If our computer breaks down or we lose it, we can use a different computer to access our project from the remote repo as it is backed up there
+  * Colleagues can collaborate with us regardless of their location
+* Cloning a local repo:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/3ade0c91-c8c8-4f76-af53-d7f9c0e97a44)
+* Cloning a remote:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/a73f21aa-ea15-4228-9004-bad1c97fc684)
+* To identify a remote repo: `git remote`
+* Specifying name for remote when cloning:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/09457873-b108-4aca-b355-cfbdc2ce4c87)
+
+### Collaborating on Git Projects
+#### Gathering from a remote
+* If several people are collaborating on a project then, in practice, they will access the remote, work on files locally, save them, and synchronize their changes between the remote and local repos
+* This means that the remote repo should be the source of truth for the project, where the latest versions of files that are not drafts can be located
+* To compare the files in a remote against the contents of a local repo we first need to fetch versions from the remote:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/7668f2af-38b8-491c-ac02-b3ea5166639e)
+* You can also fetch from a different branch by: `git fetch origin branch_ name`
+* To synchronize content between the 2 repos:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/c25b6b07-59f1-42c5-a081-c7179fba2d49)
+* Git has simplified the process of fetch and merge into one command: git pull
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/056aaeec-14bb-48b4-8e99-28b92a21886f)
+* If we have been working locally and not yet committed our changes, then Git won't allow us to pull from a remote. Let's say we've added a new line to the report but not staged the file or made a commit
+* If we try to pull from origin then Git tells us that local changes would be overwritten. We are instructed to commit our changes and told that the pull command was aborted
+* Therefore, it's important to save our work locally before we pull from a remote
+
+#### Pushing to a remote
+* Is the process of bringing our local changes into a remote repo
+* Git push syntax:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/dd7a4c50-304d-4319-9bc4-322f2eaeace7)
+* Typical git push/pull workflow:
+  * We start by pulling the remote into our local repo
+  * We then work on our project locally, committing changes as we go
+  * Lastly, we push our updated local repo to the remote
+  * This workflow is repeated throughout our time working on the project.
+* Note that remote/loval conflicts can arise when we don't start the workflow by pulling from the remote
+* This can typically occur because while we've been working locally, our colleagues have been pushing their changes to the remote
+* So, if we don't pull from the remote at the start of the workflow then our local repo won't be synchronized with the remote
