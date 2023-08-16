@@ -104,3 +104,30 @@
 * To create a new branch:
    * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/2c8f2a9a-3794-46a5-b6bb-d0873dfa93f6)
 * To compare branches: `git diff branch1 branch2`
+
+#### Git Merge Branches
+* When working on projects, developing across different components is common
+* This is a key reason why we should switch between branches, as it allows us to keep making progress concurrently
+* For example, imagine we have some code in use to track the performance of our surveys
+* We want to test some new ideas, but we don't want to change our existing code until we have confirmed it works. We create a new branch of our repo called testing, and test our new ideas. We can also create a new branch for debugging
+* To switch branches: `git checkout branch_name`
+* After we finish the task handled in the branch, we merge the branch into main branch (ground truth of the project, hence should always be up to date)
+* We can merge branches using: `git merge source destination`
+* The output of the merge command is:
+  * Last commit hashes from each branch (2)
+  * Type of merge e.g. Fast-forward --> meaning additional commits were made on the summary-statistics branch, so Git brings the main branch up to date
+  * Number of lines added or deleted per file
+
+### Handling Git Conflicts
+* A conflict occurs when a file in different branches has different contents that prevent them from automatically merging into a single version
+* Output of opening conflicting file using nano text editor:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/d94fc9b7-86ce-4e3d-9acb-7c7da4a91176)
+* To resolve the conflict:
+  * Delete all conflicting lines and remain with the relevant line, and save the file
+  * Add the modified file to staging area: `git add modified_file`
+  * Commit it to main branch: `git commit -m "Resolving file conflict"`
+  * Merge updated branch into main again: `git merge updated_branch main`
+* So, in the case of conflicts, prevention is definitely better than cure
+* While it's important that we know how to deal with conflicts, the best approach is to lower the chances of conflicts occurring
+* The ideal approach is to use each branch for a specific task. We should avoid editing the same file in multiple branches.
+* While it doesn't guarantee we'll avoid creating a conflict, it does reduce the risk
