@@ -1,6 +1,6 @@
-![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/21f8411c-247f-45b6-8125-7eb1c9ddc474)# Version Control in Git
+# Version Control in Git
 
-## Introduction
+## 1. Introduction
 * Version is the contents of a file at a given point in time. It also includes metadata, or information associated with the file, such as the author, where it is located, the file type, and when it was last saved
 * Version control is a group of systems and processes to manage changes made to documents, programs, and directories
 * Version control isn't just for software. Anything that changes over time or needs to be shared can benefit from using version control
@@ -36,7 +36,7 @@
 * To compare multiple staged files with last commit, we omit the filename in the command:
     * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/83d950be-d378-4333-b35c-c6b343d567d1)
 
-## Making Changes
+## 2. Making Changes
 ### Storing data with Git
 * Git stores data through commits, which have three parts
 * The first is the commit itself, which contains metadata such as the author, commit message, and time of the commit
@@ -69,15 +69,21 @@
 
 ### Restoring and Reverting
 * To customize log output (especially to confine output to a few commits):
-   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/aea8fbbf-3123-48a7-8824-c222e5a34dae)
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/aea8fbbf-3123-48a7-8824-c222e5a34dae)
 * We can also customize git log by date as follows:
-   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/8cedc2d7-da82-4b39-b839-0f8c3213ca35)
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/8cedc2d7-da82-4b39-b839-0f8c3213ca35)
 * Restoring an old version of a file (Part 1):
-   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/6e705e07-a8c2-4426-bc33-4533c7377ac3)
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/6e705e07-a8c2-4426-bc33-4533c7377ac3)
 * Restoring an old version of a file (Part 2):
-   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/5477424d-c3f6-4681-a9a2-51bf5c13252c)
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/5477424d-c3f6-4681-a9a2-51bf5c13252c)
 * Restoring a repo to a previous state(restore old versions of all files):
-   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/441da7cd-891f-4713-88e8-a28095f8282d)
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/441da7cd-891f-4713-88e8-a28095f8282d)
 * Cleaning a repo:
-   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/f9d60384-e747-4c37-9d8b-f9298887f4d9)
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/f9d60384-e747-4c37-9d8b-f9298887f4d9)
   
+## 3. Git Workflows
+### Configuring Git
+* To configure global email:
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/6f6220ab-86d8-4824-9b7d-b24046876533)
+* To ignore specific files, we put the files in a `.ignore` file:
+      * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/21f8411c-247f-45b6-8125-7eb1c9ddc474)
