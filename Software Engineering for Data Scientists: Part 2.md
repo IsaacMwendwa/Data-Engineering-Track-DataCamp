@@ -32,3 +32,11 @@
   * Unpredictability - function's input or output might change without warning when the developer updates their package
 
 ### Using inheritance to Create a Class
+*The DRY Principle is a great rule for writing modular, readable code (Don't Repeat Yourself)
+* In the case of extending the Document class to be a SocialMedia class, we can stay DRY by using the Object Oriented Programming concept of inheritance
+* With inheritance, we start with a parent class and we pass on it's functionality to a child class
+* The child class inherits all the methods and attributes of its parent, and we're able to add additional functionality without affecting the parent class
+* Steps creating classes using inheritance:
+  * First, we import the ParentClass for use in defining our ChildClass
+  * To let Python know we're using inheritance, we pass the ParentClass as an argument in our class statement
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/ee3483f7-b22d-483a-8151-030e03c72202)
