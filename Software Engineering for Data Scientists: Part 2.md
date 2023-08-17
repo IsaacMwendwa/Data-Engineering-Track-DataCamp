@@ -32,7 +32,7 @@
   * Unpredictability - function's input or output might change without warning when the developer updates their package
 
 ### Using inheritance to Create a Class
-*The DRY Principle is a great rule for writing modular, readable code (Don't Repeat Yourself)
+* The DRY Principle is a great rule for writing modular, readable code (Don't Repeat Yourself)
 * In the case of extending the Document class to be a SocialMedia class, we can stay DRY by using the Object Oriented Programming concept of inheritance
 * With inheritance, we start with a parent class and we pass on it's functionality to a child class
 * The child class inherits all the methods and attributes of its parent, and we're able to add additional functionality without affecting the parent class
@@ -69,6 +69,33 @@
   * The first sections describe the functionality of what we're documenting
   * Next, we document the parameters and return value of our function. We use this particular syntax with the colons by convention so that downstream tools can take our docstrings and convert them into website based documentation
   * Last, we can document example usage, and expected output. The 3 chevrons show the example function call and the next line will represent the expected output
- * 
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/45ba972c-6701-41f3-b321-555c336ff673)
+ 
 
+### Readability Counts
+* When to refactor functions - when the function is a bit long and we have separate processes happening
+* You should strive for your functions to accomplish one and only one thing
 
+### Unit Testing
+* Even well-documented, readable code isn't very useful if doesn't work correctly
+* That's where testing can come in handy. With testing, you can confirm your code is working as intended
+* You probably already run some manual tests
+* Instead of writing these tests in the console, you could add much more value to your project by adding these to your test suite
+* A written test can be re-run after you make changes to check if there were any unexpected effects
+* Also, changes in dependencies can sometimes break your code. Automated tests can alert you problems like this and more
+
+#### Using doctest
+* ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/a9a361b0-5f17-490d-9077-80a95407f81c)
+
+#### Using pytest
+  * ![PytestPNG](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/4eac9b77-c00a-48ff-a892-a270f6557fc6)
+* To write unit tests:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/7a9aff90-3543-413f-a84d-5ffdca5edfc2)
+* Note below:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/4b69a97d-e4b9-4f16-9304-e74f49a5158a)
+* To run our tests on all files in directory:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/4f236dd7-17b7-4090-a7e6-b0b1695d7d20)
+* To run tests in just one file:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/acae7e95-e51b-442b-833e-fea8c2598d85)
+* Example of a failed test:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/2432ed46-1c6e-480a-a04f-829115e99900)
