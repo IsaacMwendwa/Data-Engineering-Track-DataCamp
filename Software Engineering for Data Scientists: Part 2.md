@@ -53,3 +53,22 @@
   * With an IDE, use tab complete to get a list of suggestions
   * Use help(class_instance) in console, good but will only include public methods in it's output
   * Using dir(class_instance) will print a fairly exhaustive list of what your class has under the covers
+
+## Maintainability
+### Documentation
+* Documentation in python can take the forms:
+  * Comments, led by pound (#) symbol. Can be used inline or on a separate line
+  * Docstrings, are invoked by the use of triple quotation marks 
+* A big difference between docstrings and comments is that comments will not be seen by your users unless they are looking into your source code
+* The goal of comments is to make your code more readable for both yourself and collaborators
+* To write effective comments:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/9a09dd7a-6e2e-4b08-827d-7689f74d0cf1)
+* Comments are documentation for yourself and collaborators, docstrings are documentation for your users
+* Docstrings are what python outputs whenever a user calls `help()` on your functions and classes
+* The anatomy of a docstring:
+  * The first sections describe the functionality of what we're documenting
+  * Next, we document the parameters and return value of our function. We use this particular syntax with the colons by convention so that downstream tools can take our docstrings and convert them into website based documentation
+  * Last, we can document example usage, and expected output. The 3 chevrons show the example function call and the next line will represent the expected output
+ * 
+
+
