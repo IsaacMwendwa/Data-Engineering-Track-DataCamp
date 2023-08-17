@@ -57,7 +57,17 @@
   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/1762377f-6b87-4dba-9018-881ea7dd3218)
 * The contents of `requirements.txt`:
   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/c98ebfe7-cfea-422c-8e96-df4914eba6bd)
+* This installs all the packages listed with respect the correct version
+* Note that we didn't actually install our package, we just recreated its environment
 * The contents of `setup.py`:
   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/5fb4ea45-fbcd-4055-9d87-9f42e5b1e2bd)
-
-
+* Some less obvious arguments in our example are `install_requires` and `packages`
+* `packages` in essence lists the location of all the init files in our package. Our package has a single init file and it's in the directory 'my_package'
+* More complex packages might include subpackages with their own init files, if this was the case we would also list their locations here
+* Until you start writing more complex packages, the contents of the `packages` list will likely be the same as the name argument
+* `install_requires` might look familiar, in the case of our package, the contents are the same as our requirements file
+* There are cases where `install_requires` may differ from `requirements.txt`:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/b2fd78c6-92a9-4154-848b-def49a1f3dc0)
+* Now that we've completed our `setup.py`, we can install our package using `pip install .` from inside the same directory as our package
+* This will install our package at an environment level so we can import it into any python script using the same environment.
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/d536fea2-d2cc-46bb-b4aa-725873f505e7)
