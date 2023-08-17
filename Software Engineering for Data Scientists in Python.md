@@ -23,7 +23,8 @@
 * Using pycodestyle in editor:
   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/0f4ef34c-2fdc-42f0-841b-7770cb9fa355)
 
-#### Writing Python Packages
+## Writing a Python Module
+### Writing Python Packages
 * A minimal python package consists of 2 elements: a directory and a python file
 * The name of the directory will be the name of the package, but how should you name it?
   * PEP 8 states that packages should have short, all-lowercase names
@@ -47,4 +48,16 @@
   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/0029ead8-0759-4ef9-9101-584234e6e8e6)
 * You can also extend package structure by building packages inside your package (subpackages):
   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/fc073917-6ad5-4f62-b327-73dcbadd97ee)
- 
+
+### Making your package portable
+* Now that you have a functional package you might want to share it with your colleagues
+* The two main steps to sharing a python package are creating `setup.py` and `requirements.txt`
+* These two pieces provide information on how to install your package and recreate its required environment
+* These files list information about what dependencies you've used as well as allowing you to describe your package with additional metadata
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/1762377f-6b87-4dba-9018-881ea7dd3218)
+* The contents of `requirements.txt`:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/c98ebfe7-cfea-422c-8e96-df4914eba6bd)
+* The contents of `setup.py`:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/5fb4ea45-fbcd-4055-9d87-9f42e5b1e2bd)
+
+
