@@ -40,3 +40,16 @@
   * First, we import the ParentClass for use in defining our ChildClass
   * To let Python know we're using inheritance, we pass the ParentClass as an argument in our class statement
   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/ee3483f7-b22d-483a-8151-030e03c72202)
+
+### Multilevel inheritance
+* With multilevel inheritance, we have child class inheriting from the parent, and grandchild class inheriting from the child class
+* Thus, we pass along the traits of all prior classes in the family tree
+* Multiple classes can also inherit from the same parent, in a concept called 'mutliple inheritance'
+* Example of multilevel inheritance - using super function:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/20924b22-18b2-4724-9b9b-d2696032fcaf)
+* Creating grandchild class:
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/02368092-65c9-4e61-9703-fb8956f3fe80)
+* To keep track of inherited attributes:
+  * With an IDE, use tab complete to get a list of suggestions
+  * Use help(class_instance) in console, good but will only include public methods in it's output
+  * Using dir(class_instance) will print a fairly exhaustive list of what your class has under the covers
