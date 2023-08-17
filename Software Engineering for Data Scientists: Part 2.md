@@ -99,3 +99,17 @@
   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/acae7e95-e51b-442b-833e-fea8c2598d85)
 * Example of a failed test:
   * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/2432ed46-1c6e-480a-a04f-829115e99900)
+
+### Documentation and Testing in Practice
+#### Documenting projects with Sphinx
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/0a95496f-151d-4cef-a4cc-13910439a6b4)
+
+#### Documenting Classes using Sphinx + Docstring
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/950439b6-e444-4f95-8297-86a2a658ed32)
+
+#### Continuous Integration Testing
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/db52411c-2cc1-46da-86e9-4d60137f950e)
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/910a2e27-e4e6-426e-94a9-ebdbb9e9eb9d)
+
+#### Additional Tools
+  * ![image](https://github.com/IsaacMwendwa/Data-Engineering-Track-DataCamp/assets/51324520/1d680ef8-fc4b-447c-9f0c-ac4b233fcc1c)
